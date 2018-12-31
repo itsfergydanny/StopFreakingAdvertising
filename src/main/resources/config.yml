@@ -1,0 +1,29 @@
+#
+#
+# Created by fergydanny, check out my other plugins at https://www.spigotmc.org/resources/authors/fergydanny.25236/
+#
+#
+
+# Here you can specify domains that this plugin will ignore. Keep them lowercase
+whitelisted-domains:
+  - 'youtube.com'
+  - 'twitter.com'
+
+# Specify the warning message players get when advertising.
+warning-message: '&cPlease do not advertise again. Doing so will get you permanently banned!'
+
+# Here you can specify after how many offenses a player is punished.
+punishment-threshold: 3
+
+# Here you specify what happens when they reach the above threshold, use %player% to substitute the player name.
+punishment-command: '/ban %player% Advertising'
+
+# Filter isn't catching a specific case? Add it here
+custom-filters:
+  - 'mc()potato()com'
+
+#
+#
+# The End
+#
+#

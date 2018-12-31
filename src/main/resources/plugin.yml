@@ -1,0 +1,6 @@
+name: StopFreakingAdvertising
+version: ${project.version}
+main: com.fergydanny.StopFreakingAdvertising
+authors: [fergydanny]
+description: A simple anti-advertising solution
+website: https://fergydanny.com

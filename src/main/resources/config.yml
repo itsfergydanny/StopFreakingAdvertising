@@ -40,6 +40,9 @@ bypass-filter: true # This filter prevents obvious bypasses. Currently blocks us
 numberedip-filter: true # This one simply blocks all numbered ips. For example: 127.0.0.1
 custom-filter: true # This one checks messages to see if they contain the exact strings in the above custom-filters section.
 
+# Whether or not to toggle debug messages in console (helps you see how the filter catches a message)
+debug: false
+
 #
 #
 # The End

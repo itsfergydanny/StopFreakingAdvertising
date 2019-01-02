@@ -30,6 +30,7 @@ public class PlayerChatEvent implements Listener {
     private boolean urlFilter;
     private boolean bypassFilter;
     private boolean numberedIP;
+    private boolean debug;
 
     public PlayerChatEvent(StopFreakingAdvertising plugin) {
         this.plugin = plugin;
@@ -44,6 +45,7 @@ public class PlayerChatEvent implements Listener {
         urlFilter = plugin.getConfig().getBoolean("url-filter");
         bypassFilter = plugin.getConfig().getBoolean("bypass-filter");
         numberedIP = plugin.getConfig().getBoolean("numberedip-filter");
+        debug = plugin.getConfig().getBoolean("debug");
     }
 
     @EventHandler (priority = EventPriority.MONITOR)
@@ -59,7 +61,9 @@ public class PlayerChatEvent implements Listener {
         String message = e.getMessage().toLowerCase();
         Set<Player> recipients = e.getRecipients();
 
-        System.out.println("[DEBUG] Player sent message " + message);
+        if (debug) {
+            System.out.println("[StopFreakingAdvertising Debug] Player sent message " + message);
+        }
 
         // Check if matches any custom filters
         if (customFilter) {
@@ -74,7 +78,9 @@ public class PlayerChatEvent implements Listener {
         // Check for basic url like test.com, mc.test.com and such
         if (urlFilter) {
             String checkUrl = UrlCheck.test(message);
-            System.out.println("checked url is " + checkUrl);
+            if (debug) {
+                System.out.println("[StopFreakingAdvertising Debug] url caught: " + checkUrl);
+            }
             if (!checkUrl.isEmpty() && !whitelistedDomains.contains(checkUrl)) {
                 stop(player, recipients, message);
                 return;

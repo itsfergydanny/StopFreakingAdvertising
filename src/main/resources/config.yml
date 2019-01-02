@@ -22,6 +22,24 @@ punishment-command: '/ban %player% Advertising'
 custom-filters:
   - 'mc()potato()com'
 
+# Do you want the entire chat to be cleared when a users message is flagged for advertising?
+clear-chat: true
+
+# Here you can customize the chat cleared message
+clear-chat-message:
+  - '&7&m---------------------------------'
+  - ' '
+  - '        &eThe chat has been cleared!'
+  - '          &7(Reason: Advertisement)'
+  - ' '
+  - '&7&m---------------------------------'
+
+# Here you set which filters are enabled or disabled
+url-filter: true # This filter blocks any urls that are not in the above whitelisted-domains. Works for potato.com, mc.potato.com, potato.com/potato
+bypass-filter: true # This filter prevents obvious bypasses. Currently blocks users saying stuff like mc dot potato dot com.
+numberedip-filter: true # This one simply blocks all numbered ips. For example: 127.0.0.1
+custom-filter: true # This one checks messages to see if they contain the exact strings in the above custom-filters section.
+
 #
 #
 # The End

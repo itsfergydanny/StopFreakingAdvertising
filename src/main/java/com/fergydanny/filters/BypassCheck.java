@@ -7,10 +7,8 @@ import java.util.regex.Pattern;
 
 public class BypassCheck {
     public static boolean test(String msg) {
-        // Remove special characters
-        msg = msg.replaceAll("[^a-zA-Z]", "");
         // Match the word dot
-        Pattern p = Pattern.compile("(.*|\\s|)[dD](\\s|)[oO0](\\s|)[tT](?!\\S)");
+        Pattern p = Pattern.compile("(.*|\\s)[dD](\\s|)[oO0](\\s|)[tT]([^a-zA-Z]|\\s|$)");
         Matcher m = p.matcher(msg);
         return m.find();
     }

@@ -78,7 +78,7 @@ public class PlayerChatEvent implements Listener {
         // Check for basic url like test.com, mc.test.com and such
         if (urlFilter) {
             String checkUrl = UrlCheck.test(message);
-            if (debug) {
+            if (debug && !checkUrl.isEmpty()) {
                 System.out.println("[StopFreakingAdvertising Debug] url caught: " + checkUrl);
             }
             if (!checkUrl.isEmpty() && !whitelistedDomains.contains(checkUrl)) {

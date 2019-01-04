@@ -8,8 +8,9 @@ public class UrlCheck {
         // Remove whats after the slash
         String[] messages = msg.split("/");
         msg = messages[0];
+        msg.replaceAll("([^a-zA-Z\\s\\d])", "");
         // Match urls, starting with www/http/https or even nothing
-        Pattern p = Pattern.compile("^(?!.*)|(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-.]{1}[a-z0-9]+)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?|(?!.*)$");
+        Pattern p = Pattern.compile("^(?!.*)|(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]+([\\-.]{1}[a-z0-9]+)*(\\s|.*)\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?|(?!.*)$");
         Matcher m = p.matcher(msg);
         if (m.find()) {
             return m.group();

@@ -4,10 +4,11 @@
 #
 #
 
-# Here you can specify domains that this plugin will ignore. Keep them lowercase
+# Here you can specify domains that this plugin will ignore. Make sure to ad the subdomain too.
 whitelisted-domains:
   - 'youtube.com'
-  - 'twitter.com'
+  - 'server.com'
+  - 'play.server.com'
 
 # Specify the warning message players get when advertising.
 warning-message: '&cPlease do not advertise again. Doing so will get you permanently banned!'
@@ -18,7 +19,7 @@ punishment-threshold: 3
 # Here you specify what happens when they reach the above threshold, use %player% to substitute the player name.
 punishment-command: '/ban %player% Advertising'
 
-# Filter isn't catching a specific case? Add it here
+# Filter isn't catching a specific case? Add it here and if the message contains it, it will be caught.
 custom-filters:
   - 'mc()potato()com'
 

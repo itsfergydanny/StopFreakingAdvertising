@@ -65,7 +65,7 @@ public class PlayerChatEvent implements Listener {
             System.out.println("[StopFreakingAdvertising Debug] Player sent message " + message);
         }
 
-        // Check if matches any custom filters
+        // Check if matches any custom filters (works perfectly)
         if (customFilter) {
             for (String str : customRules) {
                 if (message.contains(str)) {
@@ -75,7 +75,7 @@ public class PlayerChatEvent implements Listener {
             }
         }
 
-        // Check for basic url like test.com, mc.test.com and such
+        // Checks for common urls both with or without subdomains
         if (urlFilter) {
             String checkUrl = UrlCheck.test(message);
             if (debug && !checkUrl.isEmpty()) {
@@ -87,7 +87,7 @@ public class PlayerChatEvent implements Listener {
             }
         }
 
-        // Check if people are trying to bypass the filter by using something like (dot)
+        // Check if people are trying to bypass the filter by using something like (dot) (too sketch)
         if (bypassFilter) {
             if (BypassCheck.test(message)) {
                 stop(player, recipients, message);
@@ -95,7 +95,7 @@ public class PlayerChatEvent implements Listener {
             }
         }
 
-        //  Check for valid Ipv4 Address
+        //  Check for valid Ipv4 Addresses
         if (numberedIP) {
             if (NumberedIP.test(message)) {
                 stop(player, recipients, message);

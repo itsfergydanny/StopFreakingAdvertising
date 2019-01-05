@@ -6,6 +6,7 @@ import com.fergydanny.filters.NumberedIP;
 import com.fergydanny.filters.UrlCheck;
 import com.fergydanny.utils.Colorize;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -58,7 +59,7 @@ public class PlayerChatEvent implements Listener {
             return;
         }
 
-        String message = e.getMessage().toLowerCase();
+        String message = ChatColor.stripColor(e.getMessage().toLowerCase());
         Set<Player> recipients = e.getRecipients();
 
         if (debug) {

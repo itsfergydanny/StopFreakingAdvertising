@@ -20,7 +20,7 @@ public class UrlCheck {
         }
 
         // Match urls without subdomains
-        p = Pattern.compile("([a-zA-Z0-9]*\\s*\\.\\s*)(co|com|org|edu|gov|uk|net|ca|de|jp|fr|au|us|ru|ch|it|nl|se|no|es|mil|me|io|pw|xyz)([^a-zA-Z]|$)");
+        p = Pattern.compile("([a-zA-Z0-9]*\\s*\\.\\s*)(co|com|org|edu|gov|uk|net|ca|au|us|ru|ch|nl|me|io|pw|xyz)([^a-zA-Z]|$)");
         m = p.matcher(msg);
         if (m.find()) {
             return m.group();

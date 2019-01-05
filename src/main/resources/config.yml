@@ -24,7 +24,7 @@ custom-filters:
   - 'mc()potato()com'
 
 # Do you want the entire chat to be cleared when a users message is flagged for advertising?
-clear-chat: true
+clear-chat: false
 
 # Here you can customize the chat cleared message
 clear-chat-message:
